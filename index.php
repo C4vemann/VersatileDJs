@@ -22,7 +22,7 @@
                 background: blue;
             }
             .two{
-                background: red;
+                background: black;
             }
             .three{
                 background:pink;
@@ -32,15 +32,19 @@
                 top:0;
                 height:50px;
                 background-image:linear-gradient(to right,black,transparent);
+                z-index:1;
             }
 
             .navigation ul{
                 float:right;
+                display:flex;
+                height:100%;
+                align-items: center;
             }
             .navigation ul li{
                 display:inline;
                 font-size:30px;
-                padding:20px;
+                padding:0 20px;
             }
             .button{
                 height:100%;
@@ -55,6 +59,58 @@
             }
             .h_wrapper h1{
                 transform: rotate(-90deg);
+            }
+            .main{
+                width:100%;
+                height:100%;
+                display:flex;
+                flex-direction:row;
+                justify-content:center;
+                overflow:hidden;
+            }
+            .sub{
+                height:100%;
+                width:100%;
+                background:blue;
+                border:2px solid black;
+                float:left;
+                overflow:hidden;
+                display:flex;
+                flex-direction:column;
+                justify-content:center;
+                align-items:center;
+                filter:grayscale(1);
+                
+            }
+            #sub1{
+                 background:url(party1.jpeg);
+                 background-size:cover;
+                 background-repeat:no-repeat;
+            }
+            #sub2{
+                background:url("party2.jpeg");
+                background-size:cover;
+                background-repeat:no-repeat;
+            }
+            #sub3{
+                background:url("party3.jpeg");
+                background-size:cover;
+                background-repeat:no-repeat;
+            }
+            #sub4{
+                background:url("party4.jpeg");
+                background-size:cover;
+                background-repeat:no-repeat;
+            }
+            .sub p{
+                width:100%;
+                text-align:center;
+                color:white;
+                font-size:3em;
+                background:rgba(0,0,0,.5);
+            }
+            .sub:hover{
+                filter:grayscale(0);
             }
             
         </style>
@@ -75,29 +131,29 @@
         <div class="outer_wrapper">
             <div class="inner_wrapper">
                 <div id="home" class="section one">
-                    <div class="button">
-                        <div class="h_wrapper">
-                            <h1>Home</h1>
-                        </div>
-                    </div>
                     <div class="main">
                         
                     </div>
 
                 </div>
                 <div id="events" class="section two">
-                    <div class="button">
-                        <h1>Events</h1>
-                    </div>
                     <div class="main">
-                        
+                        <div id="sub1" class="sub">
+                            <p>Sweet 16's</p>
+                        </div>
+                        <div id="sub2" class="sub">
+                            <p>Mitzfah</p>
+                        </div> 
+                        <div id="sub3" class="sub">
+                            <p>Wedding</p>
+                        </div>
+                        <div id="sub4" class="sub">
+                            <p>Other</p>
+                        </div>
                     </div>
                 </div>
                 
                 <div id="contact" class="section three">
-                    <div class="button">
-                        <h1>Contact</h1>
-                    </div>
                     <div class="main">
                         
                     </div>
@@ -113,6 +169,10 @@
             let navigation = document.getElementsByClassName("navigation")[0];
             let navigation_background = document.getElementsByClassName("navigation_background")[0];
             let buttons = document.getElementsByClassName("button")[0];
+            let count = 0;
+            let sectionArr = ['home','events','contact'];
+            var timer;
+            
             
             window.onload = () => {
                 sizeUp();
@@ -120,9 +180,7 @@
             
             window.addEventListener("resize", sizeUp);
             
-            let count = 0;
-            let sectionArr = ['home','events','contact'];
-            var timer;
+
             
             outer_wrapper.addEventListener("wheel", (evt) => {
               evt.preventDefault();
@@ -141,9 +199,6 @@
 
                 }
               },50);
-
-//              console.log(evt.deltaY + " " + count);
-//              outer_wrapper.scrollLeft += evt.deltaY;
             }); 
             
             function sizeUp(){
@@ -159,6 +214,10 @@
                 }
                 navigation.style.width = window.innerWidth + "px";
                 navigation_background.style.width = window.innerWidth + "px";
+                outer_wrapper.scrollTo({
+                   left:document.getElementById(sectionArr[count]).offsetLeft,
+                    behavior:'instant'
+                });
             }
             
             function test(input){
