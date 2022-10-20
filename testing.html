@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+
+		}
+		#one{
+			position: fixed;
+			top: 0px;
+			left: 0px;
+			z-index: 2;
+			height: auto;
+		}
+		#wrapper{}
+		#nav{
+			position: fixed;
+			top: 0px;
+			left: 0;
+			width: 100%;
+			background: black;
+			text-align: right;
+			padding: 20px 0px;
+			z-index: 1;
+		}
+		#nav p{
+			display: inline;
+			color: white;
+			margin: 0px 50px;
+			font-size: 2em;
+			text-decoration: underline;
+		}
+		#two{
+			position: fixed;
+			top: 0px;
+			left: 0px;
+			width: 555px;
+			height: 0px;
+			border-style: solid;
+			border-width: 160px 200px 0px 0px;
+			border-color: black transparent  transparent transparent;
+			z-index: 1;
+		}
+		#three{
+			width: 100%;
+			height: auto;
+			background-image: url("./images/party.gif");
+			background-size: cover;
+			background-repeat: no-repeat;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			min-height: 85vh;
+		}
+		#three-outer-wrapper{
+			position: absolute;
+			top: 160px;
+			display: flex;
+			justify-content: center;
+			align-content: center;
+			height: calc(100% - 300px);
+			
+		}
+		#three-wrapper{
+			background: rgba(0,0,0,.8);
+			color: white;
+			width: 55%;
+			padding: 10px;
+			border-radius: 10px 10px 10px 10px;
+			height: fit-content;
+		}
+
+		#three img{
+			width: 100%;
+			position: absolute;
+			top: 0px;
+			left: 0px;
+		}
+		#four{
+			width: 100%;
+			height: 1000px;
+			background: red;
+			position: relative;
+		}
+
+		.word{
+			font-size: 7em;
+		}
+		.pronounce{
+			font-size: 3em;
+		}
+		.adj{
+			font-size: 3em;
+			font-style: italic;
+		}
+		.definition{
+			font-size: 3em;
+		}
+		.number{
+			font-size: 3em;
+		}
+		.founder{
+			font-size: 2em;
+			text-align: right;
+			padding-right: 50px;
+		}
+		.para{
+			font-size: 2em;
+			text-align: center;
+			
+		}
+		.middle{
+			width: 100%;
+		}
+		#four-header{
+			text-align: center;
+		}
+		#four-header p{
+			font-size: 6em;
+		}
+
+		#five{
+			width: 100%;
+			height: 10000px;
+			background: blue;
+		}
+		#five-header{
+			text-align: center;
+		}
+		#five-header p{
+			font-size: 6em;
+		}
+		#events{
+			height: calc(100% - 111px);
+		}
+        .main{
+            width:100%;
+            height:100%;
+            display:flex;
+            flex-direction:row;
+            justify-content:center;
+        }
+        .sub{
+            height:100%;
+            width:100%;
+            background:blue;
+            border:2px solid black;
+            float:left;
+            filter:grayscale(1);
+            
+        }
+        #sub1{
+             background:url(party1.jpeg);
+             background-size:cover;
+             background-repeat:no-repeat;
+        }
+        #sub2{
+            background:url("party2.jpeg");
+            background-size:cover;
+            background-repeat:no-repeat;
+        }
+        #sub3{
+            background:url("party3.jpeg");
+            background-size:cover;
+            background-repeat:no-repeat;
+        }
+        #sub4{
+            background:url("party4.jpeg");
+            background-size:cover;
+            background-repeat:no-repeat;
+        }
+		.moveable{
+			width: 100%;
+			background:rgba(0,0,0,.5);
+			height: auto;
+			position: sticky;
+			position: -webkit-sticky;
+			top: 60%;
+			height: auto;
+		}
+        .sub p{
+            width:100%;
+            text-align:center;
+            color:white;
+            font-size:3em;
+        }
+        .sub:hover{
+            filter:grayscale(0);
+        }
+        .stopper{
+        	widht: 100%;
+        	height: 50%;
+        }
+            
+
+	</style>
+</head>
+	<body>
+		<div id="wrapper">
+			
+			<div id="nav">
+				<p>HOME</p>
+				<p>EVENTS</p>
+				<p>GALLERY</p>
+				<p>SERVICES</p>
+				<p>CONTACT</p>
+			</div>
+			<div id="two">
+				<img id="one" src="./images/test-logo-2-PhotoRoom.png">
+			</div>
+		</div>
+		<div id="three">
+			<div id="three-outer-wrapper">
+				<div id="three-wrapper">
+		 			<p><span class="word">Ver·sa·tile </span><span class="pronounce">/vûr′sə-təl, -tīl′/ </span><span class="adj">adj. </span></p>
+					<p><span class="number">&emsp;1. </span><span class="definition">Capable of doing many things competently.</span></p>
+					<p><span class="number">&emsp;2. </span><span class="definition">Having varied uses or serving many functions.</span></p>
+					<p class="founder">- American Heritage Dictionary</p>
+					<br>
+					<br>
+					<div id="middle">
+							<p class="para">Versatility to us, is the best of what we‘ve learned over the years. The ability to know what to do and when to do it, to make sure your event is spectacular. No matter the party, crowd or location.</p>
+							<p class="founder">- Versatile DJs</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="four">
+			<div id="four-header">
+				<p>EVENTS</p>
+			</div>
+			<div id="events" class="section two">
+	            <div class="main">
+		            <div id="sub1" class="sub">
+		            	<div class="stopper">
+		            		<div class="moveable">
+		          				<p>Sweet 16's</p>
+			          		</div>
+			          	</div>
+		            </div>
+		            <div id="sub2" class="sub">
+		            	<div class="stopper">
+		            		<div class="moveable">
+		           				<p>Mitzfah</p>
+			           		</div>
+			           	</div>
+		            </div> 
+		            <div id="sub3" class="sub">
+		            	<div class="stopper">
+		            		<div class="moveable">
+		            			<p>Wedding</p>
+			            	</div>
+			            </div>
+		            </div>
+		            <div id="sub4" class="sub">
+		            	<div class="stopper">
+		            		<div class="moveable">
+		            			<p>Other</p>
+			            	</div>
+			            </div>
+		            </div>
+	            </div>
+            </div>
+		</div>
+		<div id="five">
+			<div id="five-header">
+				<p>WHY CHOOSE US?</p>
+			</div>
+		</div>
+	</body>
+</html>
